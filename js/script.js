@@ -21,8 +21,6 @@ function ConvertNumberToPersion() {
 
 
 $(document).ready(function () {
-
-
 var xValues = [100,200,300,400,500,600,700,800,900,1000];
 labels: ['Red', 'Orange', 'Yellow', 'Green', 'Blue'],
 new Chart("myChart", {
@@ -56,7 +54,79 @@ options: {
 });
 
 
+
+// Number to Persian String //
+onload = function () {
+  var e = document.getElementById('amount');
+  e.oninput = myHandler;
+  e.onpropertychange = e.oninput; // for IE8
+  function myHandler() {
+      document.getElementById('amountString').innerHTML = e.value.toPersianLetter();
+  }
+};
+// Number to Persian String //
+
+
+
+
+function costDay () {
+  let day_selected = 01; // current day
+  let option = '';
+  option = '<option>روز</option>'; // first option
+
+  for (let i = 1; i < 32; i++) {
+      // value day number with 0. 01 02 03 04..
+      let day = (i <= 9) ? '0' + i : i;
+
+      // or value day number 1 2 3 4..
+      // let day = i;
+
+      let selected = (i === day_selected ? ' selected' : '');
+      option += '<option value="' + day + '"' + selected + '>' + day + '</option>';
+  }
+  document.getElementById("costDay").innerHTML = option;
+};
+
+
+function costMonth () {
+  let months = ["فروردین", "اردیبهشت", "خرداد", "تیر", "مرداد", "شهریور", "مهر", "آبان", "آذر", "دی", "بهمن", "اسفند"];
+  var month_selected = 00 // current month
+  var option = '';
+  option = '<option>ماه</option>'; // first option
+
+  for (let i = 0; i < months.length; i++) {
+      let month_number = (i + 1);
+
+      // value month number with 0. [01 02 03 04..]
+      let month = (month_number <= 9) ? '0' + month_number : month_number;
+
+      // or value month number. [1 2 3 4..]
+      // let month = month_number;
+
+      // or value month names. [January February]
+      // let month = months[i];
+
+      let selected = (i === month_selected ? ' selected' : '');
+      option += '<option value="' + month + '"' + selected + '>' + months[i] + '</option>';
+  }
+  document.getElementById("costMonth").innerHTML = option;
+};
+
+
+function clearAllInput(){
+  $("input[type=text],textarea,input[type=email]").val('');
+
+};
+
 $(document).ready(function () {
 
-    ConvertNumberToPersion();
+  ConvertNumberToPersion();
+  costDay();
+  costMonth();
+  clearAllInput();
+
+
 });
+
+
+
