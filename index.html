@@ -1,0 +1,283 @@
+
+
+
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.rtl.min.css" integrity="sha384-gXt9imSW0VcJVHezoNQsP+TNrjYXoGcrqBZJpry9zJt8PCQjobwmhMGaDHTASo9N" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link href="./css/style.css" rel="stylesheet"> 
+    <script src="./js/script.js" ></script>
+    <script src="./js/chart.js" ></script>
+    <title>تمرین 1</title>
+
+
+  </head>
+
+
+  <body>
+
+
+    <div class="container-fluid w-100 h-auto m-0 p-0">  
+      <div class="row">
+
+      <div class="col-12">
+        <img src="./img/308.png" class="img-fluid w-100 h-auto p-0 m-0" alt="Patience">
+      </div>        
+    </div>
+  </div>
+  
+    
+
+
+
+
+<section style="margin-top: -1.5rem;">
+
+
+<div class="container">
+  <div class="row">
+
+
+    <div class="col border bg-light m-1" >
+    
+      <div class="row p-1 mt-2 ">
+        <div class="col  border bg-light rounded border-success m-1">
+          <div class="form-check pr-5">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" name="costType" id="" value="checkedValue" >
+              درآمد
+            </label>
+          </div>
+        </div>
+        <div class="col  border bg-light rounded border-danger m-1">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="costType" id="" value="" >
+            هزینه
+          </label>
+        </div>
+      </div>
+
+
+          <div class="row p-1 mt-1 ">
+            <form class="row g-3">
+           
+              <div class="col-12">
+                <div class="input-group mb-3">
+                  <span class="input-group-text">مبلغ</span>
+                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <span class="input-group-text">دویست هزار تومان</span>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <label for="inputState" class="form-label">سال</label>
+                <select id="inputState" class="form-select">
+                  <option selected>1400</option>
+                  <option>1399</option>
+                  <option>1398</option>
+                  <option>1397</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="inputState" class="form-label">ماه</label>
+                <select id="inputState" class="form-select">
+                  <option selected>فروردین</option>
+                  <option>اردیبهشت</option>
+                  <option>خرداد</option>
+                  <option>تیر</option>
+                  <option>مرداد</option>
+                  <option>شهریور</option>
+
+                </select>
+              </div>
+              <div class="col-md-4">
+                <label for="inputState" class="form-label">روز</label>
+                <select id="inputState" class="form-select">
+                  <option selected>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8</option>
+                </select>
+              </div>
+
+
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="توضیحات" id="floatingTextarea"></textarea>
+                <label for="floatingTextarea">توضیحات</label>
+              </div>
+
+
+              <div class="d-grid gap-2 mb-2">
+                <button type="submit" class="btn btn-success">ثبت دخل و خرج</button>
+              </div>
+
+
+            </form>
+           </div>
+
+    </div>
+
+
+
+
+    <div class="col  m-1">
+    
+      <div class="row text-center text-light">
+        <div class="col  border bg-success rounded border-success  mx-1 p-2">
+          درآمد <br/>
+          1/500/000
+        </div>
+        <div class="col border rounded bg-danger p-2 mx-1">
+          هزینه <br/>
+          1/500/000
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col bg-light  border rounded border-success  m-2 ">
+
+      <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+
+
+    </div>
+  </div>
+
+    </div>
+
+
+
+  
+
+
+  </div>
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+<srction>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-striped mt-2 text-center">
+  
+
+    
+
+        <thead class="table-primary">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">مبلغ </th>
+            <th scope="col">تاریخ</th>
+            <th scope="col">نوع هزینه</th>
+            <th scope="col">عملیات</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>10000 تومان</td>
+            <td>1400/01/01</td>
+            <td class="text-success">درآمد</td>
+            <td> <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">نمایش</button>
+              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal2" >حذف</button> </td>
+          </tr>
+      
+
+          <tr>
+            <th scope="row">1</th>
+            <td>20000 تومان</td>
+            <td>1400/02/01</td>
+            <td class="text-danger">هزینه</td>
+            <td> <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal" >نمایش</button>
+              <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal2" >حذف</button> </td>
+          </tr>
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+</srction>
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">تست مودال</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        این صفحه تست برای مودال می باشد
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabe2" aria-hidden="true">
+  <div class="modal-dialog modal-sm ">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabe2">حذف</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        این صفحه برای پاک کردن دخل و خرج می باشد
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">حذف</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">خروج</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+ 
+  </body>
+
+
+
+</html>
